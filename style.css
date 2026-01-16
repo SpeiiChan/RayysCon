@@ -1,0 +1,47 @@
+
+      .nav {
+        justify-content: space-between;
+        background-color: black;  
+        padding: 10px;     
+      }
+      .nav-link{
+        color: chartreuse;
+      }
+      .btn {
+        border-radius: 100px;
+        padding-right: 40px;
+        padding-left: 40px;
+        height: 50px;
+        border: 2px solid black;
+      }
+      .p-5 {
+        border-radius: 25px;
+        padding: 100%;
+      }
+      .col {
+        padding: 5px;
+        margin-top: 5px;
+      }
+      .card{
+        width: 90%;
+        height: 20%;
+        border-radius: 20px;
+        border: none;
+        background-color: chartreuse;
+      }
+      .btcard{
+        background-color: lightgrey;
+      }
+      .box{
+        justify-content: center;
+      }
+      .row1{
+        margin-bottom: 20px;
+        margin-left: 13%;
+      }
+      .card1{
+        height: 15%;
+      }
+      .circle{
+        margin-left: 140px;
+      }

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+      /* Custom CSS for responsiveness */
+      @media (max-width: 768px) {
+        .nav .nav-item {
+          margin-bottom: 5px;
+        }
+        
+        .nav .nav-link {
+          padding: 8px 12px;
+          font-size: 0.9rem;
+        }
+        
+        .wrapper h1 {
+          font-size: 1.8rem !important;
+        }
+        
+        .card {
+          width: 100% !important;
+          margin-bottom: 15px;
+        }
+        
+        .text-blog h1 {
+          font-size: 1.2rem !important;
+        }
+        
+        .character-number {
+          font-size: 2.5rem !important;
+        }
+        
+        .d-flex img {
+          margin-right: 10px !important;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .nav {
+          padding: 10px 0;
+        }
+        
+        .wrapper h1 {
+          font-size: 1.5rem !important;
+        }
+        
+        .wrapper p {
+          font-size: 0.9rem;
+        }
+        
+        .btn {
+          padding: 8px 16px;
+          font-size: 0.85rem;
+          margin-bottom: 10px;
+        }
+        
+        .row1 .col-4,
+        .row1 .col-6 {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+        
+        .character-number {
+          font-size: 2rem !important;
+        }
+        
+        .text-light h6 {
+          font-size: 0.85rem !important;
+        }
+        
+        #slider {
+          width: 150px !important;
+        }
+        
+        .navbar-toggler {
+          padding: 4px 8px;
+          font-size: 0.9rem;
+        }
+      }
+      
+      @media (max-width: 992px) {
+        .search-form {
+          margin-top: 15px;
+          width: 100%;
+        }
+        
+        .sticky-top {
+          position: relative !important;
+        }
+      }
+      
+      /* Make images responsive */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Responsive character section */
+      .character-section .row {
+        margin-bottom: 20px;
+      }
+      
+      .character-section .col {
+        margin-bottom: 30px;
+      }
+      
+      /* Responsive navigation */
+      .navbar-collapse {
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+      }
+      
+      /* Responsive card layouts */
+      .stats-cards .card {
+        margin: 10px auto;
+      }
+      
+      /* Responsive text sizes */
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      h5 { font-size: 1.2rem; }
+      h6 { font-size: 1rem; }
+      
+      @media (max-width: 768px) {
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.8rem; }
+        h5 { font-size: 1.1rem; }
+      }
+      
+      @media (max-width: 576px) {
+        h1 { font-size: 1.8rem; }
+        h2 { font-size: 1.5rem; }
+        h5 { font-size: 1rem; }
+      }
+      
+      /* Make buttons responsive */
+      .btn {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      /* Responsive spacing */
+      .responsive-padding {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      
+      @media (max-width: 768px) {
+        .responsive-padding {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      
+      /* Fix for card body on mobile */
+      .card-body {
+        padding: 1.5rem !important;
+      }
+      
+      @media (max-width: 576px) {
+        .card-body {
+          padding: 1rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Responsive Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-lg-none" href="#"><b>RAYYCON</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#Home"><b>HOME</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Landing"><b>PROJECT</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About"><b>TEAM</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Team"><b>ABOUT</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact"><b>CONTACT</b></a>
+            </li>
+          </ul>
+          <form class="d-flex search-form mt-3 mt-lg-0">
+            <input class="form-control me-2 rounded-pill" type="search" placeholder="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div class="container-fluid responsive-padding">
+      <div class="row mt-3 mt-md-5 align-items-center" id="Home">
+        <div class="col-12 col-md-6 order-2 order-md-1">
+          <div class="wrapper pt-4">
+            <h1 class="display-5"><strong>Welcome to</strong></h1>
+            <h1 class="display-4"><strong>RAYYCON</strong></h1>
+            <h2><strong>Creative & Branding Agency</strong></h2>
+            <p>We providing our customer</p>
+            <p>Creative Design</p>
+            <p>Brand Strategy</p>
+            
+            <div class="d-flex flex-wrap mt-4">
+              <button class="btn btn-primary text-black me-3 mb-2" style="background-color: chartreuse;">
+                <b>CONTACT US</b>
+              </button>
+              <button class="btn btn-primary mb-2" style="background-color: blueviolet">
+                <b>ADD TO CART</b>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+          <img src="image/evan head1.jpg" class="img-fluid rounded shadow" alt="Evangelion Head" style="border: 2px solid black;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container-fluid mt-5 pt-4 pb-4" style="background-color: lightgray;">
+      <div class="container">
+        <div class="row stats-cards justify-content-center">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card bg-light mx-auto" style="max-width: 18rem;">
+              <div class="card-body p-4 text-center" style="background-color: white; border-radius: 20px;">
+                <i class="bi bi-newspaper display-6 mb-3"></i>
+                <p class="mb-0"><b>500+ SITES</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card bg-light mx-auto" style="max-width: 18rem;">
+              <div class="card-body p-4 text-center" style="background-color: chartreuse; border-radius: 20px;">
+                <i class="bi bi-bag display-6 mb-3"></i>
+                <p class="mb-0"><b>SKILLS</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card bg-light mx-auto" style="max-width: 18rem;">
+              <div class="card-body p-4 text-center" style="background-color: white; border-radius: 20px;">
+                <i class="bi bi-palette display-6 mb-3"></i>
+                <p class="mb-0"><b>DESIGN</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card bg-light mx-auto" style="max-width: 18rem;">
+              <div class="card-body p-4 text-center" style="background-color: blueviolet; border-radius: 20px;">
+                <i class="bi bi-laptop display-6 mb-3 text-white"></i>
+                <p class="mb-0 text-white"><b>RESPONSIVE</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card bg-light mx-auto" style="max-width: 18rem;">
+              <div class="card-body p-4 text-center" style="background-color: white; border-radius: 20px;">
+                <i class="bi bi-award display-6 mb-3"></i>
+                <p class="mb-0"><b>AWARDS</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="card bg-light mx-auto" style="max-width: 18rem;">
+              <div class="card-body p-4 text-center" style="background-color: blueviolet; border-radius: 20px;">
+                <i class="bi bi-chat-dots display-6 mb-3 text-white"></i>
+                <p class="mb-0 text-white"><b>SUPPORT</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Landing Section -->
+    <div class="container-fluid" style="background-color: blueviolet;" id="Landing">
+      <div class="container responsive-padding">
+        <div class="row align-items-start py-5">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <h1 class="text-light display-6"><strong>NEW DESIGN RELEASE!</strong></h1>
+            <p class="text-light lead">Evangelion Special Edition</p>
+            <p class="text-light">First Come, First Serve!</p>
+            <p class="text-light">Learn More</p>
+            <button class="btn btn-primary text-black mb-4" style="background-color: chartreuse">
+              <b>CLICK HERE</b>
+            </button>
+            <br>
+            <img src="image/evan manga.jpg" class="img-fluid rounded shadow mt-4" alt="Evangelion Manga">
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="card mb-3">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <strong>Visit Other Similar Design!</strong>
+                <i class="bi bi-plus-lg"></i>
+              </div>
+            </div>
+            
+            <div class="text-light mb-5">
+              <h5 class="mb-3"><strong>Second Impact shatters Earth, Angels attack, NERV builds Evas...</strong></h5>
+              <ul class="list-unstyled">
+                <li>• Evangelion Chapter 1</li>
+                <li>• Evangelion Chapter 2</li>
+                <li>• Evangelion Chapter 3</li>
+                <li>• Evangelion Limited</li>
+              </ul>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <strong>Check Out Our Merch!</strong>
+                <i class="bi bi-plus-lg"></i>
+              </div>
+            </div>
+            
+            <div class="card mb-4">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <strong>Check Out The series</strong>
+                <i class="bi bi-plus-lg"></i>
+              </div>
+            </div>
+            
+            <hr class="border-2 border-dark">
+            
+            <div class="row mt-4">
+              <div class="col-4">
+                <img src="image/eva manga 2.jpg" class="img-fluid rounded" alt="Manga 2">
+              </div>
+              <div class="col-4">
+                <img src="image/eva manga 3.jpg" class="img-fluid rounded" alt="Manga 3">
+              </div>
+              <div class="col-4">
+                <img src="image/eva manga 4.jpg" class="img-fluid rounded" alt="Manga 4">
+              </div>
+            </div>
+            
+            <hr class="border-2 border-dark mt-4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Section -->
+    <div class="container-fluid py-5" style="background-color: black;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-12 text-center mb-4">
+            <h1 class="text-light">ORDER NOW!</h1>
+          </div>
+          
+          <div class="col-12">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <button id="button-pre" class="btn btn-link text-decoration-none">
+                <i class="bi bi-chevron-left display-4" style="color: #7950F2;"></i>
+              </button>
+              
+              <div class="mx-3">
+                <img id="slider" src="image/eva manga 2.jpg" class="img-fluid rounded shadow" style="max-width: 300px;">
+              </div>
+              
+              <button id="button-next" class="btn btn-link text-decoration-none">
+                <i class="bi bi-chevron-right display-4" style="color: #7950F2;"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="col-12 text-center mt-4">
+            <h1 class="text-light">ORDER NOW!</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Characters Section -->
+    <div class="container-fluid py-5" style="background-color: blueviolet;">
+      <div class="container responsive-padding">
+        <h1 class="text-center text-light mb-5">OUR CHARACTERS DESIGN</h1>
+        
+        <div class="row character-section">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="p-3">
+              <h1 class="character-number" style="color: chartreuse; font-size: 3rem;">01</h1>
+              <h3 class="text-light mb-3">GENDO</h3>
+              <p class="text-light small">Cold, manipulative commander of NERV. Obsessed with reuniting with his deceased wife Yui. He uses his son Shinji and others as tools for his Human Instrumentality Project.</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="p-3">
+              <h1 class="character-number" style="color: chartreuse; font-size: 3rem;">02</h1>
+              <h3 class="text-light mb-3">SHINJI</h3>
+              <p class="text-light small">The reluctant protagonist and pilot of Eva Unit-01. Struggles with loneliness, self-worth, and his strained relationship with Gendo, embodying the series' themes of depression and human connection.</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="p-3">
+              <h1 class="character-number" style="color: chartreuse; font-size: 3rem;">03</h1>
+              <h3 class="text-light mb-3">REI</h3>
+              <p class="text-light small">Mysterious First Child and pilot of Unit-00. A clone derived from Yui Ikari and Lilith, she is quiet, enigmatic, and central to Gendo's plans.</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="p-3">
+              <h1 class="character-number" style="color: chartreuse; font-size: 3rem;">04</h1>
+              <h3 class="text-light mb-3">ASUKA</h3>
+              <p class="text-light small">Fiery Second Child and pilot of Unit-02. Proud and competitive, she masks deep trauma and insecurity beneath her bravado, representing the struggle for recognition and love.</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="p-3">
+              <h1 class="character-number" style="color: chartreuse; font-size: 3rem;">05</h1>
+              <h3 class="text-light mb-3">MARI</h3>
+              <p class="text-light small">Introduced in the Rebuild films, she is playful, confident, and enjoys piloting Evas. Less burdened by trauma than others, she brings levity and unpredictability to the team.</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="p-3">
+              <h1 class="character-number" style="color: chartreuse; font-size: 3rem;">06</h1>
+              <h3 class="text-light mb-3">MISATO</h3>
+              <p class="text-light small">Operations director at NERV. Charismatic and caring toward Shinji and Asuka, yet burdened by her past and complex relationship with Ryoji Kaji. She balances maternal warmth with military leadership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container-fluid py-5 responsive-padding" id="About">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+          <div class="wrapper">
+            <h1 class="display-5 mb-4"><strong>About Our Agency</strong></h1>
+            <p class="lead">RayysCon is a Creative and Branding Agency found by Duong Pisith with the vision to help business on delivering clear and simple messages to audience. We believe that the less is attract more attention.</p>
+            
+            <div class="mt-4">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-triangle-fill me-2 text-primary"></i>
+                <span>TikTok</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-triangle-fill me-2 text-primary"></i>
+                <span>Facebook</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-lg-6">
+          <img src="image/evan 2.jpg" class="img-fluid rounded shadow" alt="Evangelion Image 2" style="border: 2px solid black;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Clients Section -->
+    <div class="container-fluid text-center py-5" style="background-color: blueviolet; color: white;">
+      <div class="container">
+        <h2 class="mb-5"><b>Our Previous Client</b></h2>
+        
+        <div class="row justify-content-center mb-4">
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-amazon display-6"></i>
+          </div>
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-currency-bitcoin display-6"></i>
+          </div>
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-car-front-fill display-6"></i>
+          </div>
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-apple display-6"></i>
+          </div>
+        </div>
+        
+        <div class="row justify-content-center">
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-playstation display-6"></i>
+          </div>
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-boot display-6"></i>
+          </div>
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-car-front display-6"></i>
+          </div>
+          <div class="col-6 col-sm-3 col-md-3 col-lg-3 mb-4">
+            <i class="bi bi-camera display-6"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container-fluid py-5 responsive-padding" id="Contact">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+          <h1 class="display-5 mb-4"><strong>Get in Touch</strong></h1>
+          <p class="lead mb-4">Are you struggling with your business? Reach out to us for free consultation.</p>
+          
+          <div class="mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-envelope-fill me-3 text-success fs-4"></i>
+              <h5 class="mb-0">CHAT TO US</h5>
+            </div>
+            <p class="ms-5 mb-1">Our friendly team is here to help.</p>
+            <a href="#" class="ms-5 text-success text-decoration-none">duongpisith@rayyscon.com</a>
+          </div>
+          
+          <div class="mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-geo-alt-fill me-3 text-success fs-4"></i>
+              <h5 class="mb-0">OFFICE</h5>
+            </div>
+            <p class="ms-5 mb-1">Come say hello at our office HQ.</p>
+            <p class="ms-5 mb-1">121 Rock Street, 21 Avenue,</p>
+            <p class="ms-5 mb-0">DMC, Y4 M1 92103-9000</p>
+          </div>
+          
+          <div class="mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-telephone-fill me-3 text-success fs-4"></i>
+              <h5 class="mb-0">PHONE</h5>
+            </div>
+            <p class="ms-5 mb-1">Mon-Fri from 8am to 5am</p>
+            <a href="#" class="ms-5 text-success text-decoration-none">+1(555) 000-000</a>
+          </div>
+        </div>
+        
+        <div class="col-12 col-lg-6">
+          <img src="image/evan 3.jpg" class="img-fluid rounded shadow" alt="Evangelion Image 3" style="border: 1px solid black;">
+          <hr class="border-2 border-dark mt-4">
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    
+    <!-- Slider Script -->
+    <script>
+      $(document).ready(function () {
+        var images = ['image/eva manga 2.jpg','image/eva manga 3.jpg','image/eva manga 4.jpg'];
+        var index = 0;
+
+        $('#button-pre').click(function() {
+          if(index > 0){
+            index -= 1;
+          }else{
+            index = (images.length - 1);
+          }
+          $("#slider").attr('src',images[index]);
+        });
+
+        $('#button-next').click(function() {
+          index += 1;
+          if((index + 1) > images.length ){
+            index = 0;
+          }
+          $("#slider").attr('src',images[index]);
+        });
+      });
+    </script>
+  </body>
+</html>
